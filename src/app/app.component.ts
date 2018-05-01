@@ -64,6 +64,7 @@ export class AppComponent {
   deleteRecipe(recipe: Recipe): void {
     let index = this.recipes.indexOf(recipe);
     this.recipes.splice(index, 1);
+    this.selectedRecipe = null;
   }
 
   deleteIngredient(recipe: Recipe): void {
