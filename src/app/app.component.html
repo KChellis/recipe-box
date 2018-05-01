@@ -1,0 +1,33 @@
+<div  *ngFor="let recipe of recipes" [class]="recipe.class">
+  <h4 (click)="onSelect(recipe)">{{recipe.title}}</h4>
+
+  <div *ngIf="recipe.selected">
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient}}
+        <!-- <input [(ngModel)]="ingredient"> -->
+      </li>
+    </ul>
+    <ol>
+      <li *ngFor="let direction of recipe.directions">{{direction}}</li>
+    </ol>
+    <button class="btn btn-info" (click)="select(recipe)" type="button" name="button">Edit</button>
+  </div>
+</div>
+<button class="btn btn-info" (click)="addRecipe()" type="button" name="button">Add Recipe</button>
+<div class="card" *ngIf="selectedRecipe">
+  <h4>Edit: {{selectedRecipe.title}}</h4>
+  <h6>Title:</h6>
+  <input [(ngModel)]="selectedRecipe.title">
+  <h6>Ingredients:</h6>
+  <div *ngFor="let ingredient of selectedRecipe.ingredients;let index = index;trackBy:trackByIndex">
+    <input name="index" [(ngModel)]="selectedRecipe.ingredients[index]" placeholder="ingredient">
+  </div>
+  <button class="btn btn-info" (click)="addIngredient(selectedRecipe)" type="button" name="button">Add ingredient</button>
+  <h6>Directions:</h6>
+  <div *ngFor="let direction of selectedRecipe.directions;let index = index;trackBy:trackByIndex">
+    <input name="index" [(ngModel)]="selectedRecipe.directions[index]" placeholder="direction">
+  </div>
+  <button class="btn btn-info" (click)="addDirection(selectedRecipe)" type="button" name="button">Add direction</button> <br>
+  <button class="btn btn-info" (click)="finishEdit()" type="button" name="button">Done Editing</button>
+</div>
