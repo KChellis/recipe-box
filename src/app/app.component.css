@@ -2,9 +2,13 @@ input {
   width: 50%;
   margin: 3px;
 }
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
 button {
   margin: 5px;
-  box-shadow: 4px 4px 4px #383838;
+  box-shadow: 4px 4px 4px #383838 !important; 
   border: 1px solid #383838;
 }
 .card {
