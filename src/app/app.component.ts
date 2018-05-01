@@ -50,7 +50,6 @@ export class AppComponent {
   }
 
   finishEdit(): void {
-    this.selectedRecipe.class = "";
     this.selectedRecipe = null;
   }
 
