@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   addRecipe(): void {
-    let newRecipe: Recipe = new Recipe('New recipe', ['New ingredient'], ['New direction'])
+    let newRecipe: Recipe = new Recipe('', [''], [''])
     this.recipes.push(newRecipe);
     newRecipe.selected = true;
     newRecipe.class = "card";
@@ -42,11 +42,11 @@ export class AppComponent {
   }
 
   addIngredient(recipe: Recipe): void {
-    recipe.ingredients.push("New ingredient");
+    recipe.ingredients.push("");
   }
 
   addDirection(recipe: Recipe): void {
-    recipe.directions.push("New direction");
+    recipe.directions.push("");
   }
 
   finishEdit(): void {
@@ -57,6 +57,12 @@ export class AppComponent {
     for (var i = 0; i < this.recipes.length; i++) {
       this.recipes[i].selected = false;
       this.recipes[i].class = "";
+      this.selectedRecipe = null;
     }
+  }
+
+  deleteRecipe(recipe: Recipe): void {
+    let index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
   }
 }
