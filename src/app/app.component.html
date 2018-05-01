@@ -15,16 +15,17 @@
   </div>
 </div>
 <button class="btn btn-info" (click)="addRecipe()" type="button" name="button">Add Recipe</button>
+<button class="btn btn-info" (click)="hideAll()" type="button" name="button">Close All</button>
 <div class="card" *ngIf="selectedRecipe">
   <h4>Edit: {{selectedRecipe.title}}</h4>
-  <h6>Title:</h6>
+  <h5>Title:</h5>
   <input [(ngModel)]="selectedRecipe.title">
-  <h6>Ingredients:</h6>
+  <h5>Ingredients:</h5>
   <div *ngFor="let ingredient of selectedRecipe.ingredients;let index = index;trackBy:trackByIndex">
     <input name="index" [(ngModel)]="selectedRecipe.ingredients[index]" placeholder="ingredient">
   </div>
   <button class="btn btn-info" (click)="addIngredient(selectedRecipe)" type="button" name="button">Add ingredient</button>
-  <h6>Directions:</h6>
+  <h5>Directions:</h5>
   <div *ngFor="let direction of selectedRecipe.directions;let index = index;trackBy:trackByIndex">
     <input name="index" [(ngModel)]="selectedRecipe.directions[index]" placeholder="direction">
   </div>

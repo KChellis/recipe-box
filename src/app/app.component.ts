@@ -34,7 +34,7 @@ export class AppComponent {
   }
 
   addRecipe(): void {
-    let newRecipe: Recipe = new Recipe('Enter title', ['Enter ingredient'], ['Enter direction'])
+    let newRecipe: Recipe = new Recipe('New recipe', ['New ingredient'], ['New direction'])
     this.recipes.push(newRecipe);
     newRecipe.selected = true;
     newRecipe.class = "card";
@@ -42,15 +42,22 @@ export class AppComponent {
   }
 
   addIngredient(recipe: Recipe): void {
-    recipe.ingredients.push("Enter ingredient");
+    recipe.ingredients.push("New ingredient");
   }
 
   addDirection(recipe: Recipe): void {
-    recipe.directions.push("Enter direction");
+    recipe.directions.push("New direction");
   }
 
   finishEdit(): void {
     this.selectedRecipe.class = "";
     this.selectedRecipe = null;
+  }
+
+  hideAll(): void {
+    for (var i = 0; i < this.recipes.length; i++) {
+      this.recipes[i].selected = false;
+      this.recipes[i].class = "";
+    }
   }
 }

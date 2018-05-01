@@ -2,3 +2,7 @@ body {
   background-color: #306669;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
+.container {
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
