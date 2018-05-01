@@ -8,7 +8,7 @@ input {
 }
 button {
   margin: 5px;
-  box-shadow: 4px 4px 4px #383838 !important; 
+  box-shadow: 4px 4px 4px #383838 !important;
   border: 1px solid #383838;
 }
 .card {
@@ -19,7 +19,7 @@ button {
   border: 1px solid #383838;
 }
 .card button {
-  width: 150px;
+  width: 180px;
 }
 h4, h5 {
   margin-top: 10px;

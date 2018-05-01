@@ -65,4 +65,12 @@ export class AppComponent {
     let index = this.recipes.indexOf(recipe);
     this.recipes.splice(index, 1);
   }
+
+  deleteIngredient(recipe: Recipe): void {
+    recipe.ingredients.splice(-1, 1);
+  }
+
+  deleteDirection(recipe: Recipe): void {
+    recipe.directions.splice(-1, 1);
+  }
 }
